@@ -27,9 +27,10 @@ vector<int> sortedSquaredArray(vector<int> array) {
 	for( int idx = array.size()-1 ; idx >= 0; idx-- ){
 		int smallerValue = array[ smallerValueIdx ];
 		int largerValue = array[ largerValueIdx ];
+		// head tail max or min choose one each step
 		if( abs( smallerValue ) > abs( largerValue ) ){
 			sortedSquares[ idx ] = smallerValue * smallerValue;
-			smallerValueIdx++;
+			smallerValueIdx = smallerValueIdx + 1;
 		}else{
 			sortedSquares[idx] = largerValue * largerValue;
 			largerValueIdx--;
